@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: eco-brickster-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        sync: false  # Set this in Render dashboard
+      - key: EMAIL_USER
+        sync: false  # Set this in Render dashboard
+      - key: EMAIL_PASSWORD
+        sync: false  # Set this in Render dashboard
+
